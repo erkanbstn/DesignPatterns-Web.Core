@@ -1,0 +1,39 @@
+﻿@model List<GetProductQueryResult>
+
+@{
+    ViewData["Title"] = "CqrsIndex";
+}
+
+<div class="container">
+    <br />
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Ürün Adı</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+            <th>Getir</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.Price ₺</td>
+                <td>@item.Stock</td>
+                <td>
+                    <a href="~/Default/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a href="~/Default/UpdateProduct/@item.ProductId" class="btn btn-primary">Düzenle</a>
+                </td>
+                  <td>
+                    <a href="~/Default/GetProduct/@item.ProductId" class="btn btn-warning">Ürün Getir</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="~/Default/AddProduct" class="btn btn-success">Yeni Ürün Ekle</a>
+</div>

@@ -1,0 +1,19 @@
+﻿@model GetProductByIdQueryResult
+
+@{
+    ViewData["Title"] = "GetProduct";
+}
+<h1>Ürün Getir</h1>
+<br />
+<form method="post">
+    <input type="hidden" asp-for="ProductId" class="form-control" />
+    <span>Ürün Adı</span>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <span>Stok</span>
+    <input type="text" asp-for="Stock" class="form-control" />
+    <br />
+    <span>Fiyat</span>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+</form>

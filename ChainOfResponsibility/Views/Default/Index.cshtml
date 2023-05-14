@@ -1,0 +1,17 @@
+﻿@model ProcessViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container">
+    <br />
+    <form method="post">
+        <span>Müşteri Adı</span>
+        <input type="text" class="form-control" asp-for="Name"/>
+        <br />
+        <span>Çekilecek Miktar</span>
+        <input type="text" class="form-control" asp-for="Amount" />
+        <br />
+        <input type="submit" class="btn btn-success" value="İşlemi Gerçekleştir" />
+    </form>
+</div>
+
