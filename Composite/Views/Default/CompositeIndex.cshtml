@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "CompositeIndex";
+    var value = ViewBag.v as ProductComposite; 
+}
+
+<h1>CompositeIndex</h1>
+<br />
+<div class="container" >
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card-header">
+                Toplam Ürün Sayısı : @value.TotalCount()
+            </div>
+            <div class="card-body">
+                @foreach (var item in value.Components)
+                {
+                    @Html.Raw(item.Display());
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
