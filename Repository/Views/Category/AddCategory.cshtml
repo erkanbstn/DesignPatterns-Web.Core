@@ -1,0 +1,14 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "AddCategory";
+}
+
+<h1>Yeni Kategori Ekle</h1>
+<br />
+<form method="post">
+    <span>Kategori Adı</span>
+    <input type="text" class="form-control" asp-for="Name"/>
+    <br />
+    <input type="submit" class="btn btn-primary" value="Değişiklikleri Kaydet"  />
+</form>
+
