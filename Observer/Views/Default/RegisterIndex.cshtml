@@ -1,0 +1,24 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "RegisterIndex";
+}
+<h1>Kayıt </h1>
+<br />
+<form method="post">
+    <span>Adınız</span>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <span>Soyadınız</span>
+    <input type="text" asp-for="Surname" class="form-control" />
+    <br />
+    <span>Email</span>
+    <input type="text" asp-for="Email" class="form-control" />
+    <br />
+    <span>Kullanıcı Adınız</span>
+    <input type="text" asp-for="Username" class="form-control" />
+    <br />
+    <span>Parola</span>
+    <input type="password" asp-for="Password" class="form-control" />
+    <br />
+    <input type="submit" class="btn btn-primary" value="Kayıt Ol" />
+</form>
