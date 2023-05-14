@@ -1,6 +1,13 @@
+using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using DataAccessLayer.UnitOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +30,15 @@ namespace UnitOfWork
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ICustomerDal, EFCustomerDal>();
+            services.AddScoped<ICustomerService, CustomerManager>();
+            services.AddScoped<IUnitOfWorkDal, UnitOfWorkDal>();
+
+
+            services.AddEntityFrameworkNpgsql().AddDbContext<Context>(opt =>
+            {
+                opt.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+            });
             services.AddControllersWithViews();
         }
 

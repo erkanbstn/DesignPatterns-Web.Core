@@ -1,0 +1,17 @@
+﻿@model CustomerViewModel
+@{
+    ViewData["Title"] = "UnitOfIndex";
+}
+
+<form method="post">
+    <span>Gönderici Id</span>
+    <input type="text" class="form-control" asp-for="SenderId"/>
+    <br />
+    <span>Alıcı Id</span>
+    <input type="text" class="form-control" asp-for="Receiver" />
+    <br />
+    <span>Miktar</span>
+    <input type="text" class="form-control" asp-for="Amount" />
+    <br />
+    <input type="submit" class="btn btn-primary" value="Değişiklikleri Kaydet"/>
+</form>
