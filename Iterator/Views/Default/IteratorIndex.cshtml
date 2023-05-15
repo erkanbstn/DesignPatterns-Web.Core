@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "IteratorIndex";
+    var model = ViewBag.v;
+    int count = 0;
+}
+
+<h1>IteratorIndex</h1>
+<br />
+<table class="table table-hover">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            Ziyaret Noktası
+        </th>
+    </tr>
+    @foreach (var item in model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item</td>
+        </tr>
+    }
+</table>
+<br />
+
