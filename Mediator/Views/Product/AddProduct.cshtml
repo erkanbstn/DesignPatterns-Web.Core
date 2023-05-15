@@ -1,0 +1,29 @@
+﻿@model CreateProductCommand
+@{
+    ViewData["Title"] = "AddProduct";
+}
+
+<h1>AddProduct</h1>
+<br />
+<div class="container">
+    <form method="post">
+        <br />
+        <span>Ürün Ad</span>
+        <input type="text" class="form-control" asp-for="Name" />
+        <br />
+        <span>Stok</span>
+        <input type="text" class="form-control" asp-for="Stock" />
+        <br />
+        <span>Stok Tip</span>
+        <input type="text" class="form-control" asp-for="StockType" />
+        <br />
+        <span>Kategori</span>
+        <input type="text" class="form-control" asp-for="Category" />
+        <br />
+        <span>Fiyat</span>
+        <input type="text" class="form-control" asp-for="Price" />
+        <br />
+        <input type="submit" class="btn btn-primary" value="Değişiklikleri Kaydet" />
+    </form>
+</div>
+
