@@ -1,22 +1,19 @@
-using Composite.DAL;
+using Facade.DAL;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
 IConfiguration configuration = new ConfigurationBuilder()
                             .AddJsonFile("appsettings.json")
                             .Build();
 builder.Services.AddControllersWithViews();
-
-
-
 builder.Services.AddDbContext<Context>(opt =>
 {
     opt.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"]);
 });
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -35,6 +32,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Default}/{action=CompositeIndex}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
