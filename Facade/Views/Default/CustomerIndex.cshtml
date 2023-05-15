@@ -1,0 +1,34 @@
+﻿@model List<Customer>
+@{
+    ViewData["Title"] = "CustomerIndex";
+}
+
+
+<h1>Müşteri Liste</h1>
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Müşteri</th>
+            <th>Adres</th>
+            <th>Şehir</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CustomerId</td>
+                <td>@item.Name @item.Surname</td>
+                <td>@item.Address</td>
+                <td>@item.City</td>
+                <td><a href="~/Default/DeleteCustomer/@item.CustomerId" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Default/UpdateCustomer/@item.CustomerId" class="btn btn-success">Düzenle</a></td>
+            </tr>
+        }
+    </table>
+    <br />
+    <a href="~/Default/AddNewCustomer" class="btn btn-primary">Yeni Müşteri Ekle</a>
+
+</div>

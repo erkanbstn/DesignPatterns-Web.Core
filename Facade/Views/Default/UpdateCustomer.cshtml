@@ -1,0 +1,25 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "UpdateCustomer";
+}
+
+
+
+<h1>Müşteri Düzenle</h1>
+<br />
+<form method="post">
+    <input type="hidden" class="form-control" asp-for="CustomerId" />
+    <span>Ad</span>
+    <input type="text" class="form-control" asp-for="Name"/>
+    <br />
+      <span>Soyad</span>
+    <input type="text" class="form-control" asp-for="Surname"/>
+    <br />
+      <span>Adres</span>
+    <input type="text" class="form-control" asp-for="Address"/>
+    <br />
+      <span>Şehir</span>
+    <input type="text" class="form-control" asp-for="City"/>
+    <br />
+    <input type="submit" class="btn btn-primary" value="Değişiklikleri Kaydet"  />
+</form>

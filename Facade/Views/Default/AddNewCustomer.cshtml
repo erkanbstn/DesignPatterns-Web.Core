@@ -1,0 +1,23 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "AddNewCustomer";
+}
+
+<h1>Yeni Müşteri Ekle</h1>
+<br />
+<form method="post">
+    <span>Ad</span>
+    <input type="text" class="form-control" asp-for="Name"/>
+    <br />
+      <span>Soyad</span>
+    <input type="text" class="form-control" asp-for="Surname"/>
+    <br />
+      <span>Adres</span>
+    <input type="text" class="form-control" asp-for="Address"/>
+    <br />
+      <span>Şehir</span>
+    <input type="text" class="form-control" asp-for="City"/>
+    <br />
+    <input type="submit" class="btn btn-primary" value="Değişiklikleri Kaydet"  />
+</form>
+

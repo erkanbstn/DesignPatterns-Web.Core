@@ -1,0 +1,28 @@
+﻿@model OrderDetail
+@{
+    ViewData["Title"] = "OrderStart";
+}
+
+
+<h1>Yeni Sipariş Ekle</h1>
+<br />
+<form method="post">
+    <span>Müşteri Id</span>
+    <input type="text" class="form-control" asp-for="CustomerId" />
+    <br />
+    <span>Ürün Id</span>
+    <input type="text" class="form-control" asp-for="ProductId" />
+    <br />
+    <span>Sipariş Id</span>
+    <input type="text" class="form-control" asp-for="OrderId" />
+    <br />
+    <span>Ürün Fiyat</span>
+    <input type="text" class="form-control" asp-for="ProductPrice" />
+    <br />
+    <span>Ürün Miktar</span>
+    <input type="text" class="form-control" asp-for="ProductCount" />
+    <br />
+    <input type="submit" class="btn btn-primary" value="Değişiklikleri Kaydet" />
+</form>
+
+

@@ -1,0 +1,35 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "ProductIndex";
+}
+
+
+<h1>Ürün Liste</h1>
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Ürün</th>
+            <th>Stok</th>
+            <th>Fiyat</th>
+            <th>Kategori</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.Name</td>
+                <td>@item.Stock</td>
+                <td>@item.Price</td>
+                <td><a href="~/Product/DeleteProduct/@item.ProductId" class="btn btn-danger">Sil</a></td>
+                <td><a href="~/Product/UpdateProduct/@item.ProductId" class="btn btn-success">Düzenle</a></td>
+            </tr>
+        }
+    </table>
+    <br />
+    <a href="~/Product/AddProduct" class="btn btn-primary">Yeni Ürün Ekle</a>
+
+</div>

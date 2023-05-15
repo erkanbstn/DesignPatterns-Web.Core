@@ -1,0 +1,23 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "AddNewProduct";
+}
+
+<h1>Yeni Ürün Ekle</h1>
+<br />
+<form method="post">
+    <span>Ad</span>
+    <input type="text" class="form-control" asp-for="Name" />
+    <br />
+    <span>Soyad</span>
+    <input type="text" class="form-control" asp-for="Stock" />
+    <br />
+    <span>Adres</span>
+    <input type="text" class="form-control" asp-for="Price" />
+    <br />
+    <span>Şehir</span>
+    <input type="text" class="form-control" asp-for="Category" />
+    <br />
+    <input type="submit" class="btn btn-primary" value="Değişiklikleri Kaydet" />
+</form>
+

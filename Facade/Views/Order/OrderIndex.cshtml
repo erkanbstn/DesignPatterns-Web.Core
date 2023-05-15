@@ -1,0 +1,27 @@
+﻿@model List<Order>
+@{
+    ViewData["Title"] = "OrderIndex";
+}
+
+
+<h1>Sipariş Liste</h1>
+<br />
+<div class="container">
+    <table class="table table-hover">
+        <tr>
+            <th>#</th>
+            <th>Müşteri</th>
+            <th>Tarih</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.OrderId</td>
+                <td>@item.CustomerId</td>
+                <td>@item.OrderDate</td>
+            </tr>
+        }
+    </table>
+    <br />
+</div>
+<a href="¨~/Order/OrderStart" class="btn btn-primary">Yeni Sipariş Detayı Oluştur</a>
